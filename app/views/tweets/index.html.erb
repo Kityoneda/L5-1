@@ -1,0 +1,22 @@
+<h1>tweet一覧</h1>
+
+<ul>
+  <% @tweets.each do |tweet| %>
+    <p><%= tweet.message %></p>
+    <% if session[:login_uid] %>
+      <%= button_to '削除', tweet_path(tweet), method: :delete %>
+      <% if tweet.likes.count > 0 %>
+        <%= button_to 'いいねを取り消す', like_path(tweet), method: :delete %>
+      <% else %>
+        <%= button_to 'いいね', likes_path(tweet_id: tweet.id), method: :post %>
+      <% end %>
+    <% end %>
+  <% end %>
+    
+    <% if session[:login_uid] %>
+      <%= link_to '新規ツイート作成', new_tweet_path %>
+      <%= link_to 'ログアウト', top_logout_path %>
+    <% else %>
+      <%= link_to 'ログイン', top_main_path %>
+    <% end %>
+</ul>

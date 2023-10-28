@@ -1,0 +1,10 @@
+<h1>新規tweet作成</h1>
+<%= form_with model: @tweet, local: true do |f| %>
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id %>
+
+  <%= f.label :message %>
+  <%= f.password_field :message %>
+
+  <%= f.submit '作成' %>
+<% end %>

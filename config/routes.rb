@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
+  get 'top/main'
+  get 'top/login'
+  get 'top/logout'
+  get 'tweets/index'
+  get 'tweets/new'
+  get 'tweets/create'
+  get 'tweets/destroy'
   get 'top/main'
   post 'top/login'
   get 'top/logout'
