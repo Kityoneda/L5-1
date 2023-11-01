@@ -3,7 +3,7 @@
 <ul>
   <% @tweets.each do |tweet| %>
     <p><%= tweet.message %></p>
-    <% if session[:login_uid] %>
+    <% if current_user %>
       <%= button_to '削除', tweet_path(tweet), method: :delete %>
       <% if tweet.likes.count > 0 %>
         <%= button_to 'いいねを取り消す', like_path(tweet), method: :delete %>
@@ -13,7 +13,7 @@
     <% end %>
   <% end %>
     
-    <% if session[:login_uid] %>
+    <% if current_user %>
       <%= link_to '新規ツイート作成', new_tweet_path %>
       <%= link_to 'ログアウト', top_logout_path %>
     <% else %>

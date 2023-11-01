@@ -3,8 +3,10 @@
   <%= f.label :uid %>
   <%= f.text_field :uid %>
 
-  <%= f.label :pass %>
-  <%= f.password_field :pass %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation, 'パスワード(確認)' %>
+  <%= f.password_field :password_confirmation %>
 
   <%= f.submit '作成' %>
 <% end %>
